@@ -25,10 +25,20 @@ element.addEventListener(`click`,
         costoBiglietto = km * costoKm;
         
         console.log(costoBiglietto);
-        
+
         if (eta === "minorenne"){
             totmin = costoBiglietto * minorenni;
             console.log(totmin);
+        }
+
+        else if (eta === "anziano"){
+            totanz = costoBiglietto * anziano;
+            console.log(totanz);
+        }
+
+        else {
+            costoBiglietto;
+            console.log(costoBiglietto);
         }
 
         
