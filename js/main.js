@@ -27,24 +27,46 @@ element.addEventListener(`click`,
         console.log(costoBiglietto);
 
         if (eta === "minorenne"){
-            totmin = costoBiglietto * minorenni;
-            console.log(totmin);
+            tot = costoBiglietto * minorenni;
+            console.log(tot);
         }
 
         else if (eta === "anziano"){
-            totanz = costoBiglietto * anziano;
-            console.log(totanz);
+            tot = costoBiglietto * anziano;
+            console.log(tot);
         }
 
         else {
-            costoBiglietto;
-            console.log(costoBiglietto);
+            tot = costoBiglietto;
+            console.log(tot);
         }
+        document.getElementById("prezzo").innerHTML = `Il costo del tuo biglietto è di: ${tot.toFixed(2)}€`;
 
+        // nome passeggero
+        document.getElementById("nome").innerHTML = `Nome Passeggero: ${nome}`; 
+        
+        // numero carrozza
+        document.getElementById("numerocar").innerHTML = `Numero Carrozza: ${Math.floor(Math.random() * 10) + 1}`;
+
+        // codice persona
+        document.getElementById("cod").innerHTML = `Codice Passeggero: ${Math.floor(Math.random() * 100000) + 1}`;
+
+        // biglietto da stampare che compare
+        const ticket = document.getElementById("stampa");
+        ticket.style.display = "block";
         
     }
 
+);
 
+// Bottone annulla
+let cancella = document.getElementById("delete");
+cancella.addEventListener(`click`,
+    function(){
+        document.getElementById("infoRequest").reset();
+        const ticket = document.getElementById("stampa");
+        ticket.style.display = "none";
+    }
 
-)
+);
 
